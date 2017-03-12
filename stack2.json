@@ -8,31 +8,31 @@
 		"InstanceType": {
 			"Description": "WebServer EC2 instance type",
 			"Type": "String",
-			"Default": "m1.medium",
+			"Default": "t2.micro",
 			"ConstraintDescription": "must be a valid EC2 instance type."
 		},
 
 		"KeyName": {
 			"Description": "Name of an existing EC2 KeyPair to enable SSH access to the instance",
 			"Type": "String",
-			"Default": "dfad"
+			"Default": "ec2demo"
 
 		},
 		"ImageID": {
 			"Description": "Name of an existing EC2 KeyPair to enable SSH access to the instance",
 			"Type": "String",
-			"Default": "ami-12345"
+			"Default": "ami-f173cc91"
 
 		},
 		"InstanceSecurityGroup": {
 			"Description": " The IP address range that can be used to SSH to the EC2 instances",
 			"Type": "AWS::EC2::SecurityGroup::Id",
-			"Default": "sg-12345"
+			"Default": "sg-b50e33cd"
 		},
 		"SubnetId": {
 			"Description": " The IP address range that can be used to SSH to the EC2 instances",
 			"Type": "AWS::EC2::Subnet::Id",
-			"Default": "subnet-12345"
+			"Default": "subnet-80b77ae7"
 		}
 
 	},
@@ -60,9 +60,9 @@
 					"Fn::Base64": {
 						"Fn::Join": ["", [
 							"#!/bin/bash -v\n",
-                                                        "mkdir /opt/test\n",
-                                                        "echo "This is my test file">/opt/test/demo",
-                                                        "/bin/bash /tmp/bootchef.sh ::PROD_ENV:: ::PROD_COMPONENT::\n",
+                                                        "mkdir /etc/chef",
+							"echo 'environment::env/$environment_param'" stack2.json,
+							"echo 'component::component/$component'" stack2.json,
 							"/opt/aws/bin/cfn-signal -e 0 -r \"ChefClient setup complete\" '", {
 							"Ref": "WaitHandle"
 							}, "'\n"
