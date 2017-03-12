@@ -61,8 +61,8 @@
 						"Fn::Join": ["", [
 							"#!/bin/bash -v\n",
                                                         "mkdir /etc/chef",
-							"echo 'environment=::env::/$environment_param'" >/etc/chef/.envdata,
-							"echo 'component=::component::/$component'" >>/etc/chef/.envdata,
+							"echo 'environment=::env::/$environment_param' >/etc/chef/.envdata\n",
+							"echo 'component=::component::/$component'>>/etc/chef/.envdata\n",
 							"/opt/aws/bin/cfn-signal -e 0 -r \"ChefClient setup complete\" '", {
 							"Ref": "WaitHandle"
 							}, "'\n"
