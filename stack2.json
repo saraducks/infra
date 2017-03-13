@@ -73,7 +73,10 @@
 			}
 		},
 		"WaitHandle": {
-			"Type": "AWS::CloudFormation::WaitConditionHandle"
+			"Type": "AWS::CloudFormation::WaitConditionHandle",
+			"Properties" :{
+         			"Timeout" : "4500"
+    				}
 		}
 	}
 }
