@@ -63,9 +63,9 @@
                                                         "mkdir /etc/chef",
 							"echo 'environment=::env::/$environment_param' >/etc/chef/.envdata\n",
 							"echo 'component=::component::/$component'>>/etc/chef/.envdata\n",
-							"/opt/aws/bin/cfn-signal -e 0 -r \"ChefClient setup complete\" '", {
-							"Ref": "WaitHandle"
-							}, "'\n"
+							 {
+							   "Ref": "WaitHandle"
+						         }, "'\n"
 
 						]]
 					}
