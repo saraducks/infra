@@ -9,7 +9,7 @@
   },
    {
     "ParameterKey": "KeyName",
-    "ParameterValue": "slave2"
+    "ParameterValue": "ec2demo"
    },
   {
      "ParameterKey": "SubnetId",
