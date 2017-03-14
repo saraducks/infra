@@ -27,12 +27,12 @@
 		"InstanceSecurityGroup": {
 			"Description": " The IP address range that can be used to SSH to the EC2 instances",
 			"Type": "AWS::EC2::SecurityGroup::Id",
-			"Default": "sg-b50e33cd"
+			"Default": "sg-842cdffc"
 		},
 		"SubnetId": {
 			"Description": " The IP address range that can be used to SSH to the EC2 instances",
 			"Type": "AWS::EC2::Subnet::Id",
-			"Default": "subnet-80b77ae7"
+			"Default": "subnet-e4a245ad"
 		}
 
 	},
